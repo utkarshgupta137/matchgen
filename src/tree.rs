@@ -161,7 +161,7 @@ impl TreeMatcher {
     /// );
     /// ```
     ///
-    /// Versus
+    /// Versus:
     ///
     /// ```rust
     /// let mut out = Vec::new();

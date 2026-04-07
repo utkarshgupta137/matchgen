@@ -26,7 +26,7 @@ mod tree;
 pub use flat::*;
 pub use tree::*;
 
-/// Output a byte to source code
+/// Output a byte to source code.
 fn fmt_byte(b: u8) -> String {
     if b.is_ascii_graphic() || b == b' ' {
         format!("b'{}'", b as char)
