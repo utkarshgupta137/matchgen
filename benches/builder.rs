@@ -134,7 +134,7 @@ fn benchmarks(c: &mut Criterion) {
                 .extend(input.iter().map(|(name, info)| {
                     (
                         name.as_bytes(),
-                        format!("{:?}", info["characters"].as_str().unwrap(),),
+                        format!("{:?}", info["characters"].as_str().unwrap()),
                     )
                 }));
             matcher.render(&mut out).unwrap();
