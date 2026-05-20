@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## main branch
 
+* **Breaking:** Changed the type of the public field `TreeNode::branch` from
+  `HashMap<u8, TreeNode>` to `BTreeMap<u8, TreeNode>`.
+
+  This makes the generated `match` arms appear in a deterministic order.
+
 ## Release 0.4.0 (2025-10-31)
 
 * Changed `TreeMatcher` to use a flat slice match, e.g. `match slice { [1, 2, 3,

@@ -1,6 +1,6 @@
 //! Code for the [`TreeMatcher`].
 
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 use std::env;
 use std::fmt;
 use std::fs;
@@ -756,7 +756,7 @@ pub struct TreeNode {
     ///
     /// If none of these characters match, then return `leaf` as the match
     /// (it might be None, indicating that nothing matches).
-    pub branch: HashMap<u8, Self>,
+    pub branch: BTreeMap<u8, Self>,
 }
 
 impl TreeNode {
