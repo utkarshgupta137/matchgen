@@ -646,7 +646,7 @@ impl FlatMatcher {
             "{fn_name}({parameter}: &[u8]) -> (Option<{return_type}>, {remainder_type}) {{",
             fn_name = self.fn_name(),
             parameter = parameter,
-            return_type = &self.return_type,
+            return_type = self.return_type,
             remainder_type = if self.return_slice { "&[u8]" } else { "usize" },
         )?;
 
