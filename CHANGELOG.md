@@ -4,10 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## main branch
 
-* **Breaking:** Changed the type of the public field `TreeNode::branch` from
-  `HashMap<u8, TreeNode>` to `BTreeMap<u8, TreeNode>`.
+### Breaking changes
+
+* Changed the type of the public fields `TreeNode::branch` and `FlatMatcher::arms` from `HashMap` to `BTreeMap`.
 
   This makes the generated `match` arms appear in a deterministic order.
+
+  Thanks to [Utkarsh Gupta](https://github.com/utkarshgupta137) for the [PR](https://github.com/danielparks/matchgen/pull/95)!
 
 ## Release 0.4.0 (2025-10-31)
 

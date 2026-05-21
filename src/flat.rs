@@ -1,7 +1,7 @@
 //! Code for the [`FlatMatcher`].
 
 use std::cmp;
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 use std::env;
 use std::fmt;
 use std::fs;
@@ -116,7 +116,11 @@ pub struct FlatMatcher {
     pub doc: Option<String>,
 
     /// The arms of the match statement.
-    pub arms: HashMap<Vec<u8>, String>,
+    ///
+    /// Note that the rendered match arms will be ordered by decreasing key
+    /// length first, then lexicographically. Simply iterating the arms will be
+    /// in lexicographic order.
+    pub arms: BTreeMap<Vec<u8>, String>,
 }
 
 impl FlatMatcher {
@@ -140,7 +144,7 @@ impl FlatMatcher {
             disable_clippy: false,
             must_use: true,
             doc: None,
-            arms: HashMap::default(),
+            arms: BTreeMap::default(),
         }
     }
 
